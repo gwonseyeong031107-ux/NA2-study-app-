@@ -182,4 +182,36 @@
 
                 <!-- Navigation Controls -->
                 <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                    <button id="btn-prev" onclick="prevQuestion()" class="px-5 py-2.
+                    <button id="btn-prev" onclick="prevQuestion()" class="px-5 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-semibold text-gray-700 disabled:opacity-40">
+                        <i class="fa-solid fa-arrow-left"></i> 이전
+                    </button>
+                    <button id="btn-submit-exam" onclick="submitExam()" class="hidden px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-semibold shadow transition">
+                        <i class="fa-solid fa-check"></i> 최종 제출 및 채점
+                    </button>
+                    <button id="btn-next" onclick="nextQuestion()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition shadow">
+                        다음 <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WRONG ANSWER REVIEW -->
+        <section id="view-wrong" class="hidden space-y-6">
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-200 flex justify-between items-center">
+                <div>
+                    <h2 class="text-lg font-bold">오답 노트 목록</h2>
+                    <p class="text-sm text-gray-500">틀린 문제를 다시 풀어보고 취약점을 완벽하게 보완하세요.</p>
+                </div>
+                <button onclick="clearWrongList()" class="bg-red-50 hover:bg-red-100 text-red-600 px-4 py-2 rounded-lg text-sm font-semibold transition border border-red-200">
+                    <i class="fa-solid fa-trash-can"></i> 전체 비우기
+                </button>
+            </div>
+
+            <div id="wrong-list-container" class="space-y-4">
+                <!-- Dynamic rendering -->
+            </div>
+        </section>
+
+        <!-- SECTION 4: DATA MANAGEMENT -->
+        <section id="view-manage" class="hidden space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 space-y-4">
